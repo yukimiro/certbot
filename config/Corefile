@@ -1,0 +1,10 @@
+.:53 {
+    forward . 8.8.8.8 9.9.9.9
+    log
+    errors
+}
+test.ru.:53 {
+    file /etc/coredns/test.db
+    log
+    errors
+}

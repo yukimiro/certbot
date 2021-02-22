@@ -1,0 +1,16 @@
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Plugins selected: Authenticator manual, Installer None
+Requesting a certificate for *.test.ru
+Performing the following challenges:
+dns-01 challenge for test.ru
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Please deploy a DNS TXT record under the name
+_acme-challenge.test.ru with the following value:
+
+823sH-Pb5DfEWU0bXe_bshnNodlK5-YYyHLkkO0gp-I
+
+Before continuing, verify the record is deployed.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Press Enter to Continue^CCleaning up challenges
+[31mExiting due to user request.[0m
