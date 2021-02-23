@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #Проверяем, установлен ли compose
 if ! [ -x "$(command -v docker-compose)" ]; then
   echo 'Error: docker-compose is not installed.' >&2
@@ -7,9 +6,9 @@ if ! [ -x "$(command -v docker-compose)" ]; then
 fi
 
 #Запускаем DNS
-docker-compose run -d --rm -p 127.0.0.2:53:53/udp coredns -conf /etc/coredns/Corefile
+docker-compose run -d --rm -p 192.168.0.53:53:53/udp coredns -conf /etc/coredns/Corefile
 
-domains=(*.test.ru)
+domains=(*.testcertbot.tk)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="" # Почта по желанию
@@ -47,12 +46,10 @@ esac
 # Проверка режима staging
 if [ $staging != "0" ]; then staging_arg="--staging"; fi
 
-docker-compose run --rm --entrypoint "certbot certonly $staging_arg $email_arg $domain_args --rsa-key-size $rsa_key_size --agree-tos --manual --preferred-challenges dns" certbot 
+docker-compose run --rm --entrypoint "certbot certonly $staging_arg $email_arg --rsa-key-size $rsa_key_size --agree-tos --break-my-certs --manual --preferred-challenges dns --manual-auth-hook /etc/letsencrypt/auth-hook.sh --manual-cleanup-hook /etc/letsencrypt/cleanup-hook.sh $domain_args" certbot 
+# работает docker-compose run --rm --entrypoint "sh /etc/letsencrypt/auth-hook.sh" certbot 
+docker-compose run --rm --entrypoint "cat /etc/coredns/test.db" certbot
 
-#cat out.txt
-#for i in "${!output[@]}"; do
-#    echo "${output[$i]} - $i"
-#done
 echo
 
 #docker-compose run --rm --entrypoint "certbot certonly --webroot -w /var/www/certbot --agree-tos" certbot

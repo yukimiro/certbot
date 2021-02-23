@@ -3,8 +3,13 @@
     log
     errors
 }
-test.ru.:53 {
+testcertbot.tk.:53 {
     file /etc/coredns/test.db
+    log
+    errors
+}
+test.ru.:53 {
+    file /etc/coredns/test2.db
     log
     errors
 }

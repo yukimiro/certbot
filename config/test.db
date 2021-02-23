@@ -1,5 +1,4 @@
-test.ru.	IN  SOA dns.test.ru. email.test.ru. 2021021414 7200 3600 1209600 3600
-gateway.test.ru.    IN  A  127.0.0.1
-dns.test.ru.	IN  A  127.0.0.1
-host.test.ru.	IN  A  127.0.0.1
-_acme-challenge.test.ru.	3600	IN  TXT  f42OUg1DlE5btAQidFT8eNzumD4-pljUa5pMOttXn1M
+testcertbot.tk.	IN  SOA dns.testcertbot.tk. email.testcertbot.tk. 2021021414 7200 3600 1209600 3600
+gateway.testcertbot.tk  IN  A  37.139.43.207
+dns.testcertbot.tk.	IN  A  37.139.43.207
+host.testcertbot.tk.	IN  A  37.139.43.207
