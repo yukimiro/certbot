@@ -8,7 +8,7 @@ fi
 #Запускаем DNS
 docker-compose run -d --rm -p 192.168.0.53:53:53/udp coredns -conf /etc/coredns/Corefile
 
-domains=(*.testcertbot1.tk)
+domains=(*.testcertbot.tk)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="" # Почта по желанию
