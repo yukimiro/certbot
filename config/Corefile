@@ -5,6 +5,10 @@
 }
 testcertbot.tk.:53 {
     file /etc/coredns/test.db
+    auto {
+      directory /etc/coredns
+      reload 10s
+    }
     log
     errors
 }
