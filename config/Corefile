@@ -3,7 +3,7 @@
     log
     errors
 }
-testcertbot.tk.:53 {
+testcertbot.ru.:53 {
     file /etc/coredns/test.db
     auto {
       directory /etc/coredns

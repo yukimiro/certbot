@@ -1,6 +1,5 @@
-testcertbot.tk. IN  SOA dns.testcertbot.tk. email.testcertbot.tk. 226 7200 3600 1209600 3600
-gateway.testcertbot.tk  IN  A  37.139.43.207
-dns.testcertbot.tk.	IN  A  37.139.43.207
-host.testcertbot.tk.	IN  A  37.139.43.207
-test.testcertbot.tk. 3600    IN  TXT  abcde
-_acme-challenge.testcertbot.tk. 3600    IN  TXT  testtest
+testcertbot.ru. IN  SOA dns.testcertbot.ru. email.testcertbot.ru. 229 7200 3600 1209600 3600
+gateway.testcertbot.ru  IN  A  37.139.43.207
+dns.testcertbot.ru.	IN  A  37.139.43.207
+host.testcertbot.ru.	IN  A  37.139.43.207
+test.testcertbot.ru. 3600    IN  TXT  abcde

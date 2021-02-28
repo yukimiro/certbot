@@ -8,11 +8,11 @@ fi
 #Запускаем DNS
 docker-compose run -d --rm -p 192.168.0.53:53:53/udp coredns -conf /etc/coredns/Corefile
 
-domains=(*.testcertbot.tk)
+domains=(*.testcertbot.ru)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="" # Почта по желанию
-staging=1 # Set to 1 if you're testing your setup to avoid hitting request limits
+staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
 
 if [ -d "$data_path" ]; then
   read -p "Сертификат уже существует. Заменить? (y/N) " decision
