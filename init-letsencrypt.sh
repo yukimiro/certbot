@@ -47,8 +47,6 @@ esac
 if [ $staging != "0" ]; then staging_arg="--staging"; fi
 
 docker-compose run --rm --entrypoint "certbot certonly $staging_arg $email_arg --rsa-key-size $rsa_key_size --agree-tos --break-my-certs --manual --preferred-challenges dns --manual-auth-hook /etc/letsencrypt/auth-hook.sh --manual-cleanup-hook /etc/letsencrypt/cleanup-hook.sh $domain_args" certbot 
-# работает docker-compose run --rm --entrypoint "sh /etc/letsencrypt/auth-hook.sh" certbot 
-docker-compose run --rm --entrypoint "cat /etc/coredns/test.db" certbot
 
 echo
 
