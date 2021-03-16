@@ -3,3 +3,4 @@ gateway.testcertbot.ru  IN  A  37.139.43.207
 dns.testcertbot.ru.	IN  A  37.139.43.207
 host.testcertbot.ru.	IN  A  37.139.43.207
 test.testcertbot.ru. 3600    IN  TXT  abcde
+test11.testcertbot.ru. 3600    IN  TXT  bbbbb

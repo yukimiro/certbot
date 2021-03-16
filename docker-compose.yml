@@ -1,4 +1,9 @@
 version: "3.9"
+
+networks:
+  monitor-net:
+    driver: bridge
+
 services:
   nginx:
     image: nginx:latest
@@ -26,3 +31,24 @@ services:
       - "10000:10000/tcp"
     volumes:
       - './config:/etc/coredns'
+  prometheus:
+    image: prom/prometheus
+    restart: always
+    ports:
+      - "9090:9090"
+#    links:
+#      - blackbox_exporter
+#      - alertmanager
+    volumes:
+      - "./config:/config"
+      - "./data/prometheus:/data"
+    command: -config.file=/config/prometheus.yml -storage.local.path=/data -storage.local.retention=5000h -alertmanager.url=http://alertmanager:9093
+  blackbox_exporter:
+    image: prom/blackbox-exporter
+    ports:
+      - "9115:9115"
+    dns: 8.8.8.8
+    restart: always
+    volumes:
+      - "./config:/config"
+    command: --config.file=/config/blackbox.yml
